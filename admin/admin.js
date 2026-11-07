@@ -266,7 +266,7 @@
           <div><h1>${esc(sec.label)}</h1>${sec.sub ? `<p class="top__sub">${esc(sec.sub)}</p>` : ''}</div>
           <div class="top__act">
             <span class="dirty" id="dirty" ${isDirty() ? '' : 'hidden'}>未保存の変更があります</span>
-            ${editable ? `<a class="btn btn--ghost btn--sm" href="${previewUrl(sec.id)}" target="_blank">${I.ext}ページを確認</a><button type="button" class="btn btn--red" data-act="save" id="save" ${isDirty() ? '' : 'disabled'}>保存する</button>` : ''}
+            ${editable ? `<a class="btn btn--ghost btn--sm" href="${previewUrl(sec.id)}" target="_blank" aria-label="ページを確認">${I.ext}<span>ページを確認</span></a><button type="button" class="btn btn--red" data-act="save" id="save" ${isDirty() ? '' : 'disabled'}>保存する</button>` : ''}
           </div>
         </header>
         <div class="body" id="body"></div>
@@ -494,7 +494,7 @@
     if (tr) { const [t, id] = tr.dataset.open.split(':'); return openRecord(t, id); }
     const a = e.target.closest('[data-act]');
     if (!a) {
-      if (e.target.closest('a.nav')) document.getElementById('side')?.classList.remove('is-open');
+      if (e.target.closest('a.nav') || (e.target.closest('.shell.menu-open') && !e.target.closest('.side'))) { document.getElementById('side')?.classList.remove('is-open'); document.querySelector('.shell')?.classList.remove('menu-open'); }
       return;
     }
     const act = a.dataset.act, path = a.dataset.path, i = Number(a.dataset.i);
@@ -502,7 +502,7 @@
     const swap = (x, y) => { if (y < 0 || y >= arr.length) return; [arr[x], arr[y]] = [arr[y], arr[x]]; };
     try {
       switch (act) {
-        case 'menu': document.getElementById('side').classList.toggle('is-open'); return;
+        case 'menu': { const o = document.getElementById('side').classList.toggle('is-open'); document.querySelector('.shell').classList.toggle('menu-open', o); return; }
         case 'logout': if (isDirty() && !confirm('保存していない変更があります。ログアウトしますか？')) return; await api('logout', { method: 'POST' }); saved = JSON.stringify(content); renderLogin(); return;
         case 'save': return save();
         case 'toggle': open.has(path) ? open.delete(path) : open.add(path); return rerender();

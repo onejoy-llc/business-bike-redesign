@@ -26,6 +26,18 @@
     }));
   });
 
+  // ---------- 目次：スマホ・タブレットでは折りたたむ ----------
+  const toc = $('[data-toc]');
+  if (toc) {
+    const mq = window.matchMedia('(max-width: 1000px)');
+    const sync = () => { toc.open = !mq.matches; };
+    sync();
+    mq.addEventListener('change', sync);
+    toc.addEventListener('click', e => { if (e.target.closest('a') && mq.matches) toc.open = false; });
+    // PCでは常に開いた状態にする
+    $('summary', toc).addEventListener('click', e => { if (!mq.matches) e.preventDefault(); });
+  }
+
   // ---------- 表示切替 ----------
   $$('[data-toggle]').forEach(cb => {
     const target = $(cb.dataset.toggle);

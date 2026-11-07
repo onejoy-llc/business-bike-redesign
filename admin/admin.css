@@ -178,3 +178,34 @@ input:focus, select:focus, textarea:focus { outline: none; border-color: var(--i
 }
 
 [hidden] { display: none !important; }
+
+/* ---------- スマホ最適化 ---------- */
+.items { grid-template-columns: minmax(0, 1fr); }
+.top > div:nth-child(2) { min-width: 0; }
+@media (max-width: 900px) {
+  body { font-size: 14.5px; }
+  .shell.menu-open::after { content: ""; position: fixed; inset: 0; background: rgba(0,0,0,.35); z-index: 25; }
+  .top { position: sticky; flex-wrap: nowrap; min-height: 56px; padding: 8px 12px; }
+  .top h1 { font-size: 16px; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .top__act { gap: 6px; }
+  .top__act .btn--ghost span, .dirty { display: none; }
+  .top__act .btn--ghost { padding: 0 8px; }
+  .top__act .btn--red { min-height: 38px; padding: 0 14px; }
+  .item__h { padding: 6px 4px 6px 10px; gap: 2px; }
+  .item__t { gap: 8px; font-size: 13px; }
+  .item__t img { width: 40px; height: 30px; }
+  .item__no { width: 1.2em; }
+  .iconbtn { width: 32px; height: 36px; }
+  .item__b { padding: 14px 12px; }
+  .panel__h { flex-wrap: wrap; }
+  .tools input[type=search] { max-width: none; flex: 1 1 100%; }
+  .tools .sp { display: none; }
+  .tbl th, .tbl td { padding: 10px; }
+  .gal { grid-template-columns: repeat(3, 1fr); }
+  .gal__ops { opacity: 1; }
+  .dl div { grid-template-columns: 1fr; gap: 0; }
+  .drawer__b, .drawer__h, .drawer__f { padding-left: 16px; padding-right: 16px; }
+  .alert { flex-direction: column; align-items: flex-start; }
+  input[type=text], input[type=password], input[type=search], select, textarea { font-size: 16px; }
+  .login__box { padding: 32px 22px; }
+}

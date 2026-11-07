@@ -33,7 +33,7 @@ function bikeImage(bike, cls = '') {
   return `<img class="${cls}" src="${esc(bike.image)}" alt="${esc(bike.name)}" loading="lazy" width="400" height="300">`;
 }
 
-function layout(c, { title, description, body, current = '', bodyClass = '' }) {
+function layout(c, { title, description, body, current = '', bodyClass = '', reserve = '/reservation/' }) {
   const s = c.site || {};
   const pageTitle = title ? `${title}｜${s.name}` : s.title;
   return `<!doctype html>
@@ -67,6 +67,7 @@ ${s.notice ? `<div class="notice"><div class="wrap">${br(s.notice)}</div></div>`
       <ul>${NAV.map(([k, l]) => `<li><a href="/${k}/"${current === k ? ' aria-current="page"' : ''}>${l}</a></li>`).join('')}</ul>
       <div class="gnav__sp">
         <a class="gnav__tel" href="tel:${tel(s.phone)}">${icon.phone}<span>${esc(s.phone)}</span><small>受付 ${esc(s.hours)}</small></a>
+        <a class="btn btn--red gnav__rsv" href="${reserve}">${icon.cal}Webで予約する</a>
       </div>
     </nav>
     <div class="hd__cta">
@@ -82,7 +83,7 @@ ${body}
 ${footer(c)}
 <div class="spbar">
   <a href="tel:${tel(s.phone)}">${icon.phone}電話する</a>
-  <a href="/reservation/" class="is-red">${icon.cal}Web予約</a>
+  <a href="${reserve}" class="is-red">${icon.cal}${reserve === '/reservation/' ? 'Web予約' : 'この車種を予約'}</a>
 </div>
 <script src="/js/site.js?v=${ver('js/site.js')}" defer></script>
 </body>
@@ -361,7 +362,7 @@ ${others.length ? `<section class="sec sec--paper">
   </div>
 </section>` : ''}
 ${cta(c)}`;
-  return layout(c, { title: `${b.name}のレンタル料金`, description: `${b.name}（${b.wheels}・${b.cc}）のレンタル料金。${(c.site || {}).description || ''}`, body, current: 'price' });
+  return layout(c, { title: `${b.name}のレンタル料金`, description: `${b.name}（${b.wheels}・${b.cc}）のレンタル料金。${(c.site || {}).description || ''}`, body, current: 'price', reserve: `/reservation/?bike=${encodeURIComponent(b.slug)}` });
 };
 
 exports.service = c => {
@@ -441,7 +442,7 @@ function legalPage(c, key, en, ja) {
   const body = `${pageHead(en, ja)}
 <section class="sec">
   <div class="wrap legal-wrap${toc.length > 3 ? '' : ' legal-wrap--single'}">
-    ${toc.length > 3 ? `<nav class="toc" aria-label="目次"><p>目次</p><ol>${toc.map(([id, t]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join('')}</ol></nav>` : ''}
+    ${toc.length > 3 ? `<details class="toc" open data-toc><summary>目次</summary><nav aria-label="目次"><ol>${toc.map(([id, t]) => `<li><a href="#${id}">${esc(t)}</a></li>`).join('')}</ol></nav></details>` : ''}
     <div class="legal">${html}</div>
   </div>
 </section>`;
