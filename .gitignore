@@ -1,0 +1,12 @@
+# 個人情報・パスワード（GitHubに上げない）
+data/admin.json
+data/reservations.json
+data/contacts.json
+data/backups/
+data/*.tmp
+# 書き出し・作業用
+dist/
+_orig/
+.claude/
+.DS_Store
+node_modules/
