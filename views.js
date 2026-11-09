@@ -49,9 +49,10 @@ function layout(c, { title, description, body, current = '', bodyClass = '', res
 <meta property="og:title" content="${esc(pageTitle)}">
 <meta property="og:description" content="${esc(description || s.description)}">
 <meta name="theme-color" content="#e21513">
+<link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@500;600;700&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:ital,wght@0,500;0,600;0,700;1,700;1,800&family=Zen+Kaku+Gothic+New:wght@400;500;700;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/css/site.css?v=${ver('css/site.css')}">
 </head>
 <body class="${bodyClass}">
@@ -60,7 +61,7 @@ ${s.notice ? `<div class="notice"><div class="wrap">${br(s.notice)}</div></div>`
 <header class="hd" id="top">
   <div class="hd__in wrap">
     <a class="brand" href="/" aria-label="${esc(s.name)} トップページ">
-      <span class="brand__mark"><img src="/img/logo.jpg" alt="" width="1171" height="140"></span>
+      <span class="brand__mark"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span></span>
       <span class="brand__txt"><b>${esc(s.name)}</b><small>${esc(s.tagline)}</small></span>
     </a>
     <nav class="gnav" id="gnav" aria-label="メインメニュー">
@@ -95,7 +96,7 @@ function footer(c) {
   return `<footer class="ft">
   <div class="wrap ft__grid">
     <div class="ft__brand">
-      <p class="ft__name">${esc(s.name)}</p>
+      <p class="ft__name"><span class="lamp lamp--ft" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span>${esc(s.name)}</p>
       <p class="ft__addr">〒${esc(s.zip)}<br>${esc(s.address)}</p>
       <a class="ft__tel" href="tel:${tel(s.phone)}">${esc(s.phone)}</a>
       <p class="ft__hours">お電話受付時間 ${esc(s.hours)}</p>
@@ -230,7 +231,7 @@ exports.home = c => {
       ${imgs[0] ? `<figure class="p1"><img src="${esc(imgs[0])}" alt="ジャイロキャノピー" width="400" height="300"></figure>` : ''}
       ${imgs[1] ? `<figure class="p2"><img src="${esc(imgs[1])}" alt="" width="400" height="300"></figure>` : ''}
       ${imgs[2] ? `<figure class="p3"><img src="${esc(imgs[2])}" alt="" width="400" height="300"></figure>` : ''}
-      <p class="hero__tag"><span>Since 2009</span>FUKUOKA / HAKATA</p>
+      <span class="lamp lamp--hero" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span>
     </div>
   </div>
   <div class="wrap">

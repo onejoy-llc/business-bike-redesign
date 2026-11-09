@@ -1,4 +1,4 @@
-// ビジネスバイクAtoZ サイトサーバー（外部ライブラリ不要 / Node.js 18+）
+// ビジネスバイクGoGo サイトサーバー（外部ライブラリ不要 / Node.js 18+）
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
@@ -310,4 +310,4 @@ http.createServer((req, res) => {
     console.error(err);
     if (!res.headersSent) send(res, 500, 'Internal Server Error', MIME['.txt']);
   });
-}).listen(PORT, () => console.log(`ビジネスバイクAtoZ: http://localhost:${PORT}  管理画面: http://localhost:${PORT}/admin/`));
+}).listen(PORT, () => console.log(`ビジネスバイクGoGo: http://localhost:${PORT}  管理画面: http://localhost:${PORT}/admin/`));

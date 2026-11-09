@@ -1,5 +1,5 @@
 /* ==========================================================
-   ビジネスバイクAtoZ  — site.css
+   ビジネスバイクGoGo  — site.css
    ========================================================== */
 :root {
   --red: #e21513;
@@ -67,8 +67,7 @@ button, input, select, textarea { font: inherit; color: inherit; letter-spacing:
 .hd { position: sticky; top: 0; z-index: 50; background: rgba(255,255,255,.97); border-bottom: 1px solid var(--line); }
 .hd__in { display: flex; align-items: center; gap: 28px; height: var(--hd); }
 .brand { display: flex; align-items: center; gap: 12px; text-decoration: none; flex: none; }
-.brand__mark { width: 66px; height: 36px; overflow: hidden; flex: none; }
-.brand__mark img { height: 36px; width: auto; max-width: none; }
+.brand__mark { flex: none; display: flex; }
 .brand__txt { display: flex; flex-direction: column; line-height: 1.25; }
 .brand__txt b { font-size: 17px; font-weight: 900; letter-spacing: .04em; }
 .brand__txt small { font-size: 11px; color: var(--ink-3); letter-spacing: .08em; }
@@ -116,7 +115,6 @@ button, input, select, textarea { font: inherit; color: inherit; letter-spacing:
 .hero__pics figure { background: #ddd; overflow: hidden; }
 .hero__pics img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 4 / 3; }
 .hero__pics .p1 { grid-column: 1 / -1; }
-.hero__tag { position: absolute; right: 0; top: -24px; transform: translateY(-100%); font-family: var(--num); font-size: 12px; font-weight: 600; letter-spacing: .2em; color: var(--ink-3); display: none; }
 .facts { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 72px; border-top: 1px solid var(--ink); }
 .facts li { padding: 28px 28px 32px; border-right: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
 .facts li:first-child { padding-left: 0; }
@@ -192,7 +190,7 @@ button, input, select, textarea { font: inherit; color: inherit; letter-spacing:
 /* ---------- footer ---------- */
 .ft { background: var(--ink); color: #cfcfcf; padding: 80px 0 0; font-size: 14px; }
 .ft__grid { display: grid; grid-template-columns: 2fr 1fr 1fr 1fr; gap: 40px; padding-bottom: 64px; }
-.ft__name { color: #fff; font-size: 20px; font-weight: 900; letter-spacing: .04em; margin-bottom: 16px; }
+.ft__name { display: flex; align-items: center; gap: 12px; color: #fff; font-size: 20px; font-weight: 900; letter-spacing: .04em; margin-bottom: 16px; }
 .ft__addr { line-height: 1.8; }
 .ft__tel { display: inline-block; margin-top: 16px; color: #fff; text-decoration: none; font-family: var(--num); font-size: 30px; font-weight: 700; line-height: 1; }
 .ft__hours { font-size: 12.5px; color: #8d8d8d; margin-top: 6px; }
@@ -406,8 +404,8 @@ input::placeholder, textarea::placeholder { color: #b0aca4; }
   :root { --hd: 68px; }
   .wrap { padding: 0 24px; }
   .hd__in { gap: 12px; }
-  .brand__mark { width: 56px; height: 30px; }
-  .brand__mark img { height: 30px; }
+  .brand .lamp { height: 32px; padding: 0 11px 0 9px; }
+  .brand .lamp__txt { font-size: 20px; }
   .brand__txt b { font-size: 15px; }
   .hd__cta { margin-left: auto; }
   .menu-btn { display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 5px; width: 48px; height: 48px; border: 0; background: none; cursor: pointer; padding: 0; margin-right: -8px; }
@@ -688,3 +686,47 @@ input::placeholder, textarea::placeholder { color: #b0aca4; }
   .seg span { font-size: 12px; padding: 0 4px; }
   .cta__tel { font-size: 32px; }
 }
+
+/* ==========================================================
+   GoGoランプ（ロゴマーク）
+   ========================================================== */
+.lamp {
+  position: relative; display: inline-flex; align-items: center; justify-content: center; flex: none;
+  height: 38px; padding: 0 14px 0 11px; border-radius: 999px; isolation: isolate;
+  background: radial-gradient(120% 140% at 50% 30%, #ff5446 0%, var(--red) 52%, #9c0c0a 100%);
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.3), inset 0 -4px 8px rgba(0,0,0,.28), 0 0 0 1px #8f0b09, 0 0 16px rgba(226,21,19,.42);
+  animation: lamp-on 1.1s steps(1, end) .25s both;
+}
+.lamp::before { /* ガラスの映り込み */
+  content: ""; position: absolute; left: 14%; right: 14%; top: 3px; height: 34%; border-radius: 999px;
+  background: linear-gradient(rgba(255,255,255,.42), rgba(255,255,255,0)); z-index: -1;
+}
+.lamp__txt {
+  font-family: "Barlow Condensed", sans-serif; font-style: italic; font-weight: 800; font-size: 24px; line-height: 1;
+  letter-spacing: .01em; color: #fff; padding-right: 2px;
+  text-shadow: 0 0 2px #fff, 0 0 8px rgba(255,236,226,.95), 0 0 16px rgba(255,120,100,.8);
+}
+.brand:hover .lamp, .lamp--hero:hover { animation: lamp-flash .5s steps(1, end); }
+.lamp--ft { height: 34px; animation: none; }
+.lamp--ft .lamp__txt { font-size: 21px; }
+.lamp--hero {
+  position: absolute; z-index: 2; left: -28px; top: -6px; transform: rotate(-7deg);
+  height: 62px; padding: 0 24px 0 20px; animation-delay: .7s;
+  box-shadow: inset 0 0 0 2px rgba(255,255,255,.3), inset 0 -4px 8px rgba(0,0,0,.28), 0 0 0 1px #8f0b09, 0 0 0 5px #fff, 0 6px 22px rgba(226,21,19,.45);
+}
+.lamp--hero .lamp__txt { font-size: 40px; }
+@keyframes lamp-on {
+  0%   { filter: brightness(.38) saturate(.5); box-shadow: inset 0 0 0 2px rgba(255,255,255,.12), 0 0 0 1px #5e0706; }
+  22%  { filter: brightness(1.15); }
+  30%  { filter: brightness(.45) saturate(.6); }
+  44%  { filter: brightness(1.2); }
+  52%  { filter: brightness(.6); }
+  64%, 100% { filter: none; }
+}
+@keyframes lamp-flash { 0%, 40% { filter: brightness(1.35); } 20%, 60% { filter: brightness(.7); } 100% { filter: none; } }
+@media (max-width: 680px) {
+  .lamp--hero { left: -4px; top: -12px; height: 46px; padding: 0 17px 0 14px; }
+  .lamp--hero .lamp__txt { font-size: 31px; }
+  .lamp--ft { height: 30px; } .lamp--ft .lamp__txt { font-size: 19px; }
+}
+@media (prefers-reduced-motion: reduce) { .lamp, .lamp--hero { animation: none !important; } }
