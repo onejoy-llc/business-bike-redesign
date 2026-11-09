@@ -226,7 +226,7 @@
 
   function renderLogin() {
     app.innerHTML = `<div class="login"><form class="login__box" id="login">
-      <div class="login__brand"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span><b>サイト管理画面</b></div>
+      <div class="login__brand"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GOGO!</span></span><b>サイト管理画面</b></div>
       <h1>管理画面ログイン</h1>
       <div class="fld"><label for="pw">パスワード</label><input type="password" id="pw" autocomplete="current-password" required autofocus></div>
       <button class="btn btn--red" type="submit">ログイン</button>
@@ -256,7 +256,7 @@
     const editable = !!sec.fields;
     app.innerHTML = `<div class="shell">
       <aside class="side" id="side">
-        <a class="side__brand" href="#/dashboard"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span><b>${esc(content.site?.name || '')}<small>サイト管理</small></b></a>
+        <a class="side__brand" href="#/dashboard"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GOGO!</span></span><b>${esc(content.site?.name || '')}<small>サイト管理</small></b></a>
         ${nav}
         <div class="side__foot"><a href="/" target="_blank">サイトを表示 ↗</a><button type="button" data-act="logout">ログアウト</button></div>
       </aside>

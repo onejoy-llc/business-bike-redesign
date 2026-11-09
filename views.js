@@ -61,7 +61,7 @@ ${s.notice ? `<div class="notice"><div class="wrap">${br(s.notice)}</div></div>`
 <header class="hd" id="top">
   <div class="hd__in wrap">
     <a class="brand" href="/" aria-label="${esc(s.name)} トップページ">
-      <span class="brand__mark"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span></span>
+      <span class="brand__mark"><span class="lamp" aria-hidden="true"><span class="lamp__txt">GOGO!</span></span></span>
       <span class="brand__txt"><b>${esc(s.name)}</b><small>${esc(s.tagline)}</small></span>
     </a>
     <nav class="gnav" id="gnav" aria-label="メインメニュー">
@@ -96,7 +96,7 @@ function footer(c) {
   return `<footer class="ft">
   <div class="wrap ft__grid">
     <div class="ft__brand">
-      <p class="ft__name"><span class="lamp lamp--ft" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span>${esc(s.name)}</p>
+      <p class="ft__name"><span class="lamp lamp--ft" aria-hidden="true"><span class="lamp__txt">GOGO!</span></span>${esc(s.name)}</p>
       <p class="ft__addr">〒${esc(s.zip)}<br>${esc(s.address)}</p>
       <a class="ft__tel" href="tel:${tel(s.phone)}">${esc(s.phone)}</a>
       <p class="ft__hours">お電話受付時間 ${esc(s.hours)}</p>
@@ -231,7 +231,7 @@ exports.home = c => {
       ${imgs[0] ? `<figure class="p1"><img src="${esc(imgs[0])}" alt="ジャイロキャノピー" width="400" height="300"></figure>` : ''}
       ${imgs[1] ? `<figure class="p2"><img src="${esc(imgs[1])}" alt="" width="400" height="300"></figure>` : ''}
       ${imgs[2] ? `<figure class="p3"><img src="${esc(imgs[2])}" alt="" width="400" height="300"></figure>` : ''}
-      <span class="lamp lamp--hero" aria-hidden="true"><span class="lamp__txt">GoGo!</span></span>
+      <span class="lamp lamp--hero" aria-hidden="true"><span class="lamp__txt">GOGO!</span></span>
     </div>
   </div>
   <div class="wrap">
