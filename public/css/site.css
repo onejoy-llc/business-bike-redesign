@@ -730,3 +730,11 @@ input::placeholder, textarea::placeholder { color: #b0aca4; }
   .lamp--ft { height: 30px; } .lamp--ft .lamp__txt { font-size: 19px; }
 }
 @media (prefers-reduced-motion: reduce) { .lamp, .lamp--hero { animation: none !important; } }
+
+/* メーカー画像（白背景）用の調整 */
+.hero__pics figure { background: #fff; border: 1px solid var(--line); }
+.card__img { background: #fff; border-bottom: 1px solid var(--line); }
+.gallery__main { background: #fff; border: 1px solid var(--line); }
+.gallery__thumbs img, .ptable__thumb img, .bikepick__img img, .sum__img img { background: #fff; }
+.gallery__thumbs button { border: 1px solid var(--line); }
+@media (max-width: 680px) { .card__img { border-bottom: 0; border-right: 1px solid var(--line); } }

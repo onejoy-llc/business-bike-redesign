@@ -29,9 +29,9 @@
     "heroTitle": "ビジネスバイクの\nレンタルは、\nビジネスバイクGoGo。",
     "heroLead": "用途に合わせたビジネスバイクをお選びください。福岡を中心に、ジャイロ・ギア・カブ等を取り扱っています。",
     "heroImages": [
-      "/img/bikes/canopy_11.jpg",
-      "/img/bikes/P1050206.jpg",
-      "/img/bikes/P1050316.jpg"
+      "/img/bikes/maker/canopy.jpg",
+      "/img/bikes/maker/gyro-x.jpg",
+      "/img/bikes/maker/gear.jpg"
     ],
     "facts": [
       {
@@ -59,16 +59,9 @@
       "engine": "4サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/canopy_11.jpg",
+      "image": "/img/bikes/maker/canopy.jpg",
       "gallery": [
-        "/img/bikes/canopy_11.jpg",
-        "/img/bikes/canopy_13.jpg",
-        "/img/bikes/canopy_18.jpg",
-        "/img/bikes/canopy_14.jpg",
-        "/img/bikes/canopy_16.jpg",
-        "/img/bikes/canopy_12.jpg",
-        "/img/bikes/canopy_15.jpg",
-        "/img/bikes/canopy_17.jpg"
+        "/img/bikes/maker/canopy.jpg"
       ],
       "variants": [
         {
@@ -90,16 +83,10 @@
       "engine": "4サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/P1050173.jpg",
+      "image": "/img/bikes/maker/gyro-x.jpg",
       "gallery": [
-        "/img/bikes/P1050173.jpg",
-        "/img/bikes/P1050176.jpg",
-        "/img/bikes/P1050179.jpg",
-        "/img/bikes/P1050180.jpg",
-        "/img/bikes/P1050183.jpg",
-        "/img/bikes/P1050185.jpg",
-        "/img/bikes/P1050187.jpg",
-        "/img/bikes/P1050245.jpg"
+        "/img/bikes/maker/gyro-x.jpg",
+        "/img/bikes/maker/gyro-x-2.jpg"
       ],
       "variants": [
         {
@@ -121,17 +108,9 @@
       "engine": "2サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/P1050228.jpg",
+      "image": "/img/bikes/maker/gyro-up.jpg",
       "gallery": [
-        "/img/bikes/P1050228.jpg",
-        "/img/bikes/P1050232.jpg",
-        "/img/bikes/P1050234.jpg",
-        "/img/bikes/P1050236.jpg",
-        "/img/bikes/P1050240.jpg",
-        "/img/bikes/P1050238.jpg",
-        "/img/bikes/P1050242.jpg",
-        "/img/bikes/P1050244.jpg",
-        "/img/bikes/P1050243.jpg"
+        "/img/bikes/maker/gyro-up.jpg"
       ],
       "variants": [
         {
@@ -153,17 +132,11 @@
       "engine": "4サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/P1050206.jpg",
+      "image": "/img/bikes/maker/gear.jpg",
       "gallery": [
-        "/img/bikes/P1050206.jpg",
-        "/img/bikes/P1050209.jpg",
-        "/img/bikes/P1050213.jpg",
-        "/img/bikes/P1050216.jpg",
-        "/img/bikes/P1050215.jpg",
-        "/img/bikes/P1050219.jpg",
-        "/img/bikes/P1050222.jpg",
-        "/img/bikes/P1050224.jpg",
-        "/img/bikes/P1050225.jpg"
+        "/img/bikes/maker/gear.jpg",
+        "/img/bikes/maker/gear-2.jpg",
+        "/img/bikes/maker/gear-3.jpg"
       ],
       "variants": [
         {
@@ -180,8 +153,10 @@
       "engine": "4サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/lineup05.jpg",
-      "gallery": [],
+      "image": "/img/bikes/maker/cub.jpg",
+      "gallery": [
+        "/img/bikes/maker/cub.jpg"
+      ],
       "variants": [
         {
           "label": "ホンダカブ(4st)",
@@ -197,8 +172,13 @@
       "engine": "4サイクル",
       "cc": "50cc",
       "top": true,
-      "image": "/img/bikes/lineup09.jpg",
-      "gallery": [],
+      "image": "/img/bikes/maker/zoomer-1.jpg",
+      "gallery": [
+        "/img/bikes/maker/zoomer-1.jpg",
+        "/img/bikes/maker/zoomer-2.jpg",
+        "/img/bikes/maker/zoomer-3.jpg",
+        "/img/bikes/maker/zoomer-4.jpg"
+      ],
       "variants": [
         {
           "label": "ホンダズーマー(4st)",
@@ -214,19 +194,10 @@
       "engine": "4サイクル",
       "cc": "250cc",
       "top": true,
-      "image": "/img/bikes/majesty250_01.jpg",
+      "image": "/img/bikes/maker/majesty.jpg",
       "gallery": [
-        "/img/bikes/majesty250_01.jpg",
-        "/img/bikes/majesty250_02.jpg",
-        "/img/bikes/majesty250_03.jpg",
-        "/img/bikes/majesty250_04.jpg",
-        "/img/bikes/majesty250_05.jpg",
-        "/img/bikes/majesty250_06.jpg",
-        "/img/bikes/majesty250_07.jpg",
-        "/img/bikes/majesty250_08.jpg",
-        "/img/bikes/majesty250_09.jpg",
-        "/img/bikes/majesty250_10.jpg",
-        "/img/bikes/majesty250_11.jpg"
+        "/img/bikes/maker/majesty.jpg",
+        "/img/bikes/maker/majesty-2.jpg"
       ],
       "variants": [
         {
@@ -243,8 +214,9 @@
       "engine": "—",
       "cc": "—",
       "top": true,
-      "image": "/img/bikes/P1050316.jpg",
+      "image": "/img/bikes/maker/trike-cut.jpg",
       "gallery": [
+        "/img/bikes/maker/trike-cut.jpg",
         "/img/bikes/P1050316.jpg",
         "/img/bikes/P1050319.jpg",
         "/img/bikes/P1050318.jpg",
@@ -272,8 +244,9 @@
       "engine": "—",
       "cc": "—",
       "top": true,
-      "image": "/img/bikes/P1050345.jpg",
+      "image": "/img/bikes/maker/bicycle-cut.jpg",
       "gallery": [
+        "/img/bikes/maker/bicycle-cut.jpg",
         "/img/bikes/P1050345.jpg",
         "/img/bikes/P1050349.jpg",
         "/img/bikes/P1050347.jpg",
