@@ -48,7 +48,7 @@ function layout(c, { title, description, body, current = '', bodyClass = '', res
 <meta property="og:site_name" content="${esc(s.name)}">
 <meta property="og:title" content="${esc(pageTitle)}">
 <meta property="og:description" content="${esc(description || s.description)}">
-<meta name="theme-color" content="#e21513">
+<meta name="theme-color" content="#d8137f">
 <link rel="icon" href="/img/favicon.svg" type="image/svg+xml">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
